@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PSVM Cybersecurity Technologies | Agentic Defense, Pentesting and Continuous Assurance</title>
+  <meta name="description" content="PSVM Cybersecurity Technologies delivers agentic managed defense and response, agentic penetration testing, and continuous security and business-logic testing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="PSVM Cybersecurity Technologies, home">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M3 5h9M3 16h9M3 27h9" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+          <path d="M12 5l6 11-6 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" opacity=".6"/>
+          <path d="M18 16h8" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="28" cy="16" r="2.5" fill="var(--accent)"/>
+        </svg>
+        <span class="brand__name">PSVM<span class="brand__sub">Cybersecurity Technologies</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#trust">Trust</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="#contact">Request a briefing</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow"><span class="dot"></span>Agentic security operations</p>
+        <h1>Find the detections that matter.<br><span class="hl">Dismiss the rest with evidence.</span></h1>
+        <p class="lede">PSVM connects securely to the detection platforms you already run. Our agents investigate every alert, surface the ones that are material to your business, and show their reasoning. Your team works real threats instead of noise, your SOC runs leaner, and you can show auditors and the board exactly what was reviewed and why.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#contact">Request a briefing</a>
+          <a class="btn btn--ghost" href="#how">See how it works</a>
+        </div>
+
+        <figure class="stream" aria-label="Simulated visualisation: a large stream of raw detections passes through an agent triage layer and only a few material detections continue.">
+          <div class="stream__bar">
+            <span class="stream__title"><span class="dot dot--live"></span>stream://detections <em>simulated</em></span>
+            <dl class="stream__stats">
+              <div><dt>Ingested</dt><dd id="stat-in">0</dd></div>
+              <div><dt>Closed as noise</dt><dd id="stat-noise">0</dd></div>
+              <div class="is-accent"><dt>Material</dt><dd id="stat-mat">0</dd></div>
+            </dl>
+          </div>
+          <div class="stream__stage">
+            <canvas id="stream" aria-hidden="true"></canvas>
+            <span class="stream__label stream__label--l">Raw detections</span>
+            <span class="stream__label stream__label--g">Agent triage</span>
+            <span class="stream__label stream__label--r">Material to your SOC</span>
+          </div>
+        </figure>
+
+        <!-- PLACEHOLDER METRICS: illustrative targets, not measured results. Replace with sourced figures and remove the note below before launch. -->
+        <dl class="metrics">
+          <div><dd>90%</dd><dt>Fewer alerts reaching analysts</dt></div>
+          <div><dd>&lt; 5 min</dd><dt>Median time from alert to verdict</dt></div>
+          <div><dd>400+</dd><dt>Analyst hours returned per month</dt></div>
+          <div><dd>24/7</dd><dt>Agent coverage with practitioner oversight</dt></div>
+        </dl>
+        <p class="fine metrics__note">Illustrative target figures for preview. To be replaced with measured results before launch.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Services</p>
+          <h2>Three services. One agentic core.</h2>
+          <p>Each service pairs autonomous agents with senior practitioners who review, tune and stand behind the output.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__top">
+              <span class="card__num">01</span>
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.500-15-11-15-21V11z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M15 25h6l3-7 4 12 3-5h4" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Agentic Managed Defense &amp; Response</h3>
+            <p>Connect your SIEM, XDR and EDR. Agents investigate every detection end to end and hand your SOC a short, ranked queue of what is material.</p>
+            <ul>
+              <li>Every alert investigated, not sampled</li>
+              <li>Cross-tool correlation into single cases</li>
+              <li>Evidence-backed verdicts analysts can audit</li>
+              <li>Response actions gated by your approval rules</li>
+              <li>Surfaces real threats buried under noisy rules</li>
+            </ul>
+            <p class="card__out"><span>Outcome</span>A leaner SOC, with material risk in front of you sooner.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <span class="card__num">02</span>
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".5"/><path d="M24 3v10M24 35v10M3 24h10M35 24h10" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="2.500" fill="var(--accent)"/></svg>
+            </div>
+            <h3>Agentic Penetration Testing</h3>
+            <p>Agents attack your application the way an adversary would, before it goes live. Findings arrive with proof of exploit and a clear fix.</p>
+            <ul>
+              <li>Pre-release testing that fits your sprint cadence</li>
+              <li>Web, API and authentication flows</li>
+              <li>Chained exploits, not just scanner output</li>
+              <li>Reproducible proof for every finding</li>
+              <li>Retest on fix at no extra scheduling cost</li>
+            </ul>
+            <p class="card__out"><span>Outcome</span>Go live knowing what an attacker would find.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <span class="card__num">03</span>
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M40 24a16 16 0 1 1-5-11.600" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M36 6v7h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 24l5 5 9-10" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Continuous Assurance</h3>
+            <p>Always-on testing of your production sites, covering both security posture and the business logic that scanners cannot reason about.</p>
+            <ul>
+              <li>Business-logic abuse: pricing, workflow, entitlements</li>
+              <li>OWASP Top 10 coverage on every release</li>
+              <li>Drift and exposure monitoring between releases</li>
+              <li>Safe-by-design testing against production</li>
+              <li>Findings routed to your ticketing system</li>
+            </ul>
+            <p class="card__out"><span>Outcome</span>Find the weakness before a bad actor does.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section--alt" id="how">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>From raw alert to a decision you can defend.</h2>
+          <p>Onboarding is a connection, not a migration. Your tools, your data and your rules stay where they are.</p>
+        </header>
+
+        <ol class="steps reveal">
+          <li><span class="steps__n">01</span><h3>Connect</h3><p>Scoped, least-privilege API access to your detection platforms. Read-only by default.</p></li>
+          <li><span class="steps__n">02</span><h3>Correlate</h3><p>Alerts from different tools are normalised and joined into a single case per incident.</p></li>
+          <li><span class="steps__n">03</span><h3>Investigate</h3><p>Agents gather context, test hypotheses and rule out benign explanations.</p></li>
+          <li><span class="steps__n">04</span><h3>Decide</h3><p>Each case gets a verdict with the evidence behind it. Material cases are escalated.</p></li>
+          <li><span class="steps__n">05</span><h3>Respond</h3><p>Containment actions run through your tools, under the approval policy you set.</p></li>
+        </ol>
+
+        <div class="split">
+          <div class="split__text reveal">
+            <h3 class="h3-lg">Every verdict shows its work.</h3>
+            <p>A verdict without evidence just moves the trust problem. PSVM cases record each step the agent took, the data it looked at, and why it reached its conclusion, so an analyst can verify it in a minute rather than redo the investigation.</p>
+            <ul class="ticks">
+              <li>Full investigation trail on every case</li>
+              <li>Benign closures are explained, not just closed</li>
+              <li>Analyst feedback tunes future triage</li>
+              <li>Reporting you can take to audit and the board</li>
+            </ul>
+          </div>
+
+          <div class="console reveal" role="img" aria-label="Illustrative example of a PSVM case showing the agent's investigation steps and verdict.">
+            <div class="console__bar">
+              <span><i></i><i></i><i></i></span>
+              <span class="console__name">case PSVM-0412 <em>illustrative example</em></span>
+            </div>
+            <div class="console__body">
+              <p class="console__det"><b>Detection</b>Unfamiliar sign-in location, followed by a new inbox forwarding rule</p>
+              <ol class="trail">
+                <li><span>correlate</span><p>Joined 3 alerts across identity, email and endpoint into one case.</p></li>
+                <li><span>enrich</span><p>User is a finance approver. Sign-in network not seen for this user in 90 days.</p></li>
+                <li><span>test</span><p>Corporate VPN and travel ruled out. Rule forwards invoice mail to an external address.</p></li>
+                <li class="is-verdict"><span>verdict</span><p><strong>Material.</strong> Consistent with business email compromise.</p></li>
+                <li><span>action</span><p>Revoke sessions, remove rule, reset credentials. <em class="pend">Awaiting analyst approval</em></p></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COVERAGE -->
+    <section class="section" id="coverage">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Coverage</p>
+          <h2>Known vulnerability classes, plus the logic flaws unique to you.</h2>
+          <p>Pentesting and continuous assurance test against the OWASP Top 10, then go further into how your application is actually meant to behave.</p>
+        </header>
+
+        <figure class="stream graph reveal" id="graph" aria-label="Simulated visualisation: an agent probes an application and traces an attack path from the internet to customer records, raising three findings along the way.">
+          <div class="stream__bar">
+            <span class="stream__title"><span class="dot dot--live"></span>graph://attack-path <em>simulated</em></span>
+            <span class="graph__legend"><i class="lg lg--probe"></i>Probed <i class="lg lg--hit"></i>Exploited path</span>
+          </div>
+          <div class="graph__stage">
+            <svg viewBox="0 0 1000 320" role="presentation">
+              <g class="edges">
+                <line x1="80" y1="160" x2="250" y2="160"/>
+                <line x1="250" y1="160" x2="440" y2="85"/>
+                <line x1="250" y1="160" x2="440" y2="240"/>
+                <line x1="440" y1="85" x2="650" y2="85"/>
+                <line x1="440" y1="240" x2="650" y2="240"/>
+                <line x1="440" y1="85" x2="650" y2="240"/>
+                <line x1="650" y1="85" x2="870" y2="40"/>
+                <line x1="650" y1="85" x2="870" y2="160"/>
+                <line x1="650" y1="240" x2="870" y2="160"/>
+                <line x1="650" y1="240" x2="870" y2="280"/>
+              </g>
+              <g class="hits">
+                <line data-step="1" pathLength="1" x1="80" y1="160" x2="250" y2="160"/>
+                <line data-step="2" pathLength="1" x1="250" y1="160" x2="440" y2="85"/>
+                <line data-step="3" pathLength="1" x1="440" y1="85" x2="650" y2="85"/>
+                <line data-step="4" pathLength="1" x1="650" y1="85" x2="870" y2="160"/>
+              </g>
+              <g class="nodes">
+                <g data-step="0" transform="translate(80 160)"><rect x="-58" y="-19" width="116" height="38"/><text>Internet</text></g>
+                <g data-step="1" transform="translate(250 160)"><rect x="-58" y="-19" width="116" height="38"/><text>Public site</text></g>
+                <g data-step="2" transform="translate(440 85)"><rect x="-62" y="-19" width="124" height="38"/><text>API gateway</text></g>
+                <g transform="translate(440 240)"><rect x="-62" y="-19" width="124" height="38"/><text>Login</text></g>
+                <g data-step="3" transform="translate(650 85)"><rect x="-68" y="-19" width="136" height="38"/><text>Order service</text></g>
+                <g transform="translate(650 240)"><rect x="-68" y="-19" width="136" height="38"/><text>Admin console</text></g>
+                <g transform="translate(870 40)"><rect x="-74" y="-19" width="148" height="38"/><text>Object storage</text></g>
+                <g data-step="4" class="is-target" transform="translate(870 160)"><rect x="-80" y="-19" width="160" height="38"/><text>Customer records</text></g>
+                <g transform="translate(870 280)"><rect x="-74" y="-19" width="148" height="38"/><text>Payments</text></g>
+              </g>
+              <g class="marks">
+                <g data-step="2" transform="translate(345 122)"><circle r="11"/><text>1</text></g>
+                <g data-step="3" transform="translate(545 85)"><circle r="11"/><text>2</text></g>
+                <g data-step="4" transform="translate(760 122)"><circle r="11"/><text>3</text></g>
+              </g>
+            </svg>
+          </div>
+          <ol class="findings">
+            <li data-step="2"><span>1</span><p><b>Security misconfiguration</b>Verbose API errors reveal internal routes.</p></li>
+            <li data-step="3"><span>2</span><p><b>Broken access control</b>Order lookup accepts another customer's ID.</p></li>
+            <li data-step="4"><span>3</span><p><b>Business logic</b>Export returns records across tenants.</p></li>
+          </ol>
+        </figure>
+
+        <div class="cover">
+          <div class="cover__col reveal">
+            <h3 class="cover__h">OWASP Top 10 <span>2025</span></h3>
+            <ol class="owasp">
+              <li><span>A01</span>Broken Access Control</li>
+              <li><span>A02</span>Security Misconfiguration</li>
+              <li><span>A03</span>Software Supply Chain Failures</li>
+              <li><span>A04</span>Cryptographic Failures</li>
+              <li><span>A05</span>Injection</li>
+              <li><span>A06</span>Insecure Design</li>
+              <li><span>A07</span>Authentication Failures</li>
+              <li><span>A08</span>Software or Data Integrity Failures</li>
+              <li><span>A09</span>Security Logging and Alerting Failures</li>
+              <li><span>A10</span>Mishandling of Exceptional Conditions</li>
+            </ol>
+          </div>
+          <div class="cover__col reveal">
+            <h3 class="cover__h">Business logic <span>specific to your application</span></h3>
+            <ul class="logic">
+              <li><b>Price and discount manipulation</b>Tampered totals, stacked coupons, negative quantities.</li>
+              <li><b>Workflow bypass</b>Skipping approval, payment or verification steps.</li>
+              <li><b>Cross-tenant access</b>Reaching another customer's records by changing an identifier.</li>
+              <li><b>Privilege and entitlement abuse</b>Using features or limits the plan does not grant.</li>
+              <li><b>Race conditions</b>Double-spend, duplicate redemption, parallel-request abuse.</li>
+              <li><b>Account lifecycle flaws</b>Weak recovery, invitation and session handling.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM -->
+    <section class="section section--alt" id="ecosystem">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Ecosystem</p>
+          <h2>Works with the stack you already run.</h2>
+          <p>PSVM is built to sit on top of leading detection, response and protection platforms. No rip and replace.</p>
+        </header>
+
+        <div class="eco reveal">
+          <div class="eco__row">
+            <h3>SIEM &amp; XDR</h3>
+            <ul><li>Splunk</li><li>Microsoft Sentinel</li><li>Cortex XSIAM</li><li>Google Security Operations</li><li>IBM QRadar</li><li>Elastic Security</li><li>Sumo Logic</li><li>Exabeam</li></ul>
+          </div>
+          <div class="eco__row">
+            <h3>Endpoint</h3>
+            <ul><li>CrowdStrike Falcon</li><li>Microsoft Defender</li><li>SentinelOne</li><li>Cortex XDR</li><li>Trend Vision One</li><li>Sophos</li></ul>
+          </div>
+          <div class="eco__row">
+            <h3>SOAR &amp; action</h3>
+            <ul><li>Cortex XSOAR</li><li>Splunk SOAR</li><li>Tines</li><li>Torq</li><li>Swimlane</li><li>ServiceNow</li></ul>
+          </div>
+          <div class="eco__row">
+            <h3>Network &amp; edge</h3>
+            <ul><li>Palo Alto Networks</li><li>Fortinet</li><li>Check Point</li><li>Zscaler</li><li>Cloudflare</li><li>Netskope</li><li>Akamai</li></ul>
+          </div>
+          <div class="eco__row">
+            <h3>Identity</h3>
+            <ul><li>Okta</li><li>Microsoft Entra ID</li><li>CyberArk</li><li>Ping Identity</li><li>SailPoint</li></ul>
+          </div>
+          <div class="eco__row">
+            <h3>Cloud &amp; exposure</h3>
+            <ul><li>Wiz</li><li>Prisma Cloud</li><li>AWS Security Hub</li><li>Orca Security</li><li>Tenable</li><li>Qualys</li><li>Rapid7</li></ul>
+          </div>
+          <div class="eco__row">
+            <h3>Email</h3>
+            <ul><li>Proofpoint</li><li>Mimecast</li><li>Abnormal Security</li></ul>
+          </div>
+        </div>
+        <p class="fine">Product and company names are trademarks of their respective owners. They are listed to indicate integration compatibility and do not imply partnership, sponsorship or endorsement.</p>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="section" id="trust">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Trust</p>
+          <h2>Autonomy with guardrails.</h2>
+          <p>You are giving agents access to your security tooling. These are the controls that make that a safe decision.</p>
+        </header>
+        <div class="guards">
+          <div class="guard reveal"><span class="guard__k">access</span><h3>Least privilege by default</h3><p>Scoped, read-only credentials to start. Write access is granted per action type, by you.</p></div>
+          <div class="guard reveal"><span class="guard__k">control</span><h3>Human approval where it counts</h3><p>You define which actions agents may take alone and which wait for an analyst.</p></div>
+          <div class="guard reveal"><span class="guard__k">audit</span><h3>Complete action trail</h3><p>Every query, decision and action is logged and exportable for review.</p></div>
+          <div class="guard reveal"><span class="guard__k">data</span><h3>Your data stays yours</h3><p>Tenant isolation, encryption in transit and at rest, and no training on customer data.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="cta" id="contact">
+      <div class="wrap cta__inner reveal">
+        <div>
+          <p class="eyebrow">Get started</p>
+          <h2>See what your SOC is missing.</h2>
+          <p>A 30-minute briefing with a PSVM practitioner: your stack, your alert volume, and where agents would change the picture.</p>
+        </div>
+        <form class="form" id="brief" data-to="contact@psvm.example">
+          <label>Name<input name="name" autocomplete="name" required></label>
+          <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Company<input name="company" autocomplete="organization" required></label>
+          <label>Role<input name="role" autocomplete="organization-title" placeholder="e.g. CISO, Head of SecOps"></label>
+          <label class="form__wide">Service of interest
+            <select name="service">
+              <option>Agentic Managed Defense &amp; Response</option>
+              <option>Agentic Penetration Testing</option>
+              <option>Continuous Assurance</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label class="form__wide">Current detection stack (optional)<input name="stack" placeholder="e.g. Sentinel, Defender, CrowdStrike"></label>
+          <div class="form__wide form__foot">
+            <button class="btn btn--primary" type="submit">Request a briefing</button>
+            <span class="fine" id="brief-status" role="status">Preview: this form is not connected yet. Nothing is sent.</span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>&copy; <span id="year"></span> PSVM Cybersecurity Technologies</span>
+      <nav aria-label="Footer"><a href="#services">Services</a><a href="#ecosystem">Ecosystem</a><a href="#trust">Trust</a><a href="#contact">Contact</a></nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
