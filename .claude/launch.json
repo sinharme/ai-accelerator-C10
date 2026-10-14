@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "psvm-site",
+      "name": "sgi-site",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "4173", "--directory", "psvm-cybersecurity"],
+      "runtimeArgs": ["-m", "http.server", "4173", "--directory", "sgi-cybersecurity"],
       "port": 4173
     }
   ]

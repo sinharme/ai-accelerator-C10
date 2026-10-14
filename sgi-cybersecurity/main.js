@@ -39,6 +39,37 @@
     status.classList.add('is-warn');
   });
 
+  // Cookie consent. The only cookie is a strictly necessary session cookie
+  // (no Expires/Max-Age) recording the visitor's choice. sessionStorage is a
+  // fallback for sandboxed frames where cookies are blocked.
+  const CONSENT = 'sgi_consent';
+  const bar = document.getElementById('cookiebar');
+  const dialog = document.getElementById('cookie-dialog');
+
+  function readConsent() {
+    try {
+      const m = document.cookie.match(/(?:^|;\s*)sgi_consent=([^;]+)/);
+      if (m) return m[1];
+    } catch (e) { /* cookies unavailable */ }
+    try { return sessionStorage.getItem(CONSENT); } catch (e) { return null; }
+  }
+
+  function saveConsent(value) {
+    const secure = location.protocol === 'https:' ? '; Secure' : '';
+    try { document.cookie = `${CONSENT}=${value}; Path=/; SameSite=Lax${secure}`; } catch (e) { /* ignore */ }
+    try { sessionStorage.setItem(CONSENT, value); } catch (e) { /* ignore */ }
+    bar.hidden = true;
+  }
+
+  bar.hidden = !!readConsent();
+  document.querySelectorAll('[data-consent]').forEach((b) =>
+    b.addEventListener('click', () => saveConsent(b.dataset.consent)));
+  document.querySelectorAll('[data-open-cookies]').forEach((b) =>
+    b.addEventListener('click', () => {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', '');
+    }));
+
   // Hero stream: raw detections flow left to right, the triage gate closes
   // most of them as noise and lets a few material ones through.
   const canvas = document.getElementById('stream');
@@ -50,7 +81,7 @@
   const GATE = 0.58;
   const LANES = 5;
   const MATERIAL_RATE = 0.012;
-  const ACCENT = '46, 230, 200';
+  const ACCENT = '207, 148, 238';
 
   let w = 0, h = 0, gateX = 0;
   let particles = [];
@@ -104,7 +135,7 @@
     ctx.clearRect(0, 0, w, h);
 
     // lanes
-    ctx.strokeStyle = 'rgba(42, 55, 70, .55)';
+    ctx.strokeStyle = 'rgba(74, 61, 43, .7)';
     ctx.lineWidth = 1;
     for (let i = 1; i <= LANES; i++) {
       const y = Math.round((h / (LANES + 1)) * i) + 0.5;
@@ -131,10 +162,10 @@
         ctx.beginPath(); ctx.moveTo(p.x - tail, p.y); ctx.lineTo(p.x, p.y); ctx.stroke();
         ctx.fillStyle = `rgba(${ACCENT}, .22)`;
         ctx.beginPath(); ctx.arc(p.x, p.y, 9, 0, 6.2832); ctx.fill();
-        ctx.fillStyle = '#eafffb';
+        ctx.fillStyle = '#fbf2ff';
         ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, 6.2832); ctx.fill();
       } else {
-        ctx.fillStyle = `rgba(154, 168, 185, ${Math.max(0, p.a)})`;
+        ctx.fillStyle = `rgba(221, 198, 155, ${Math.max(0, p.a)})`;
         ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
       }
     }
@@ -159,12 +190,21 @@
     if (on) requestAnimationFrame(loop);
   }
 
-  resize();
   // Pre-roll so the first paint already shows a full stream.
-  for (let i = 0; i < 420; i++) step();
-  draw(); writeStats();
+  function prime() {
+    particles = [];
+    counts = { in: 0, noise: 0, mat: 0 };
+    for (let i = 0; i < 420; i++) step();
+    draw(); writeStats();
+  }
 
-  window.addEventListener('resize', () => { resize(); if (!running) draw(); });
+  // Re-prime when the canvas width changes a lot (it can measure 0 before layout settles).
+  let primedW = 0;
+  new ResizeObserver(() => {
+    resize();
+    if (w > 0 && Math.abs(w - primedW) > primedW * 0.3) { primedW = w; prime(); }
+    else if (!running) draw();
+  }).observe(canvas);
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; setRunning(visible && !document.hidden); }).observe(canvas);
   document.addEventListener('visibilitychange', () => setRunning(visible && !document.hidden));
 })();
